@@ -1,6 +1,7 @@
 package com.example.day11;
-
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -36,7 +37,20 @@ public class Main {
         {
             e.printStackTrace();
         }
+
+
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("student.txt"))){
+           String line;
+           while((line = bufferedReader.readLine()) != null){
+            System.out.println(line);
+           }
+
+        }catch(IOException e)
+        {
+            e.printStackTrace();
         }
+    }
+
         
     
-    }
+}
