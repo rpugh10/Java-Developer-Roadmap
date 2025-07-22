@@ -36,6 +36,18 @@ public class Main {
         {
             e.printStackTrace();
         }
+
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("student.txt"))){
+           String line;
+           while((line = bufferedReader.readLine()) != null){
+            System.out.println(line);
+           }
+
+        }catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        
         }
         
     
